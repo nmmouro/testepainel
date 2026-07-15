@@ -1,14 +1,18 @@
-import { post } from "../services/api.js";
+import { get }
+from "../services/api.js";
 
 async function salvar() {
 
-  const dados = {
-    nome: nome.value,
-    veiculo: veiculo.value,
-    motivo: motivo.value
-  };
+  const resultado =
+    await get(
+      "salvarLancamento",
+      {
+        nome:
+          nome.value,
 
-  const resultado = await post(dados);
+        veiculo:
+          veiculo.value
+      }
+    );
 
-  console.log(resultado);
 }

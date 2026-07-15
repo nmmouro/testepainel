@@ -1,9 +1,0 @@
-import { get } from "../services/api.js";
-
-async function carregarOcorrencias() {
-
-  const ocorrencias =
-    await get("listarOcorrencias");
-
-  renderizar(ocorrencias);
-}
