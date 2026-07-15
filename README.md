@@ -1,2 +1,0 @@
-# testepainel
-Diário de Bordo

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocorrências em Andamento</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <header>
+
+        <button id="btnMenu" class="btn-menu">
+            ← Menu Principal
+        </button>
+
+        <h1>🚗 Ocorrências em Andamento</h1>
+
+        <div class="header-info"></div>
+        
+        <span class="contador">
+        Registros: <strong id="totalRegistros">0</strong>
+        </span>
+
+        <span id="dataHora"></span>
+    
+
+    </div>
+
+    </header>
+
+    <main>
+
+        <table id="tabelaOcorrencias">
+            <thead>
+                <tr>
+                    
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Motorista</th>
+                    <th>Veículo</th>
+                    <th>Motivo</th>
+                    <th>Itinerário</th>
+                    <th>Horário Inicial</th>
+                    <th>Km Inicial</th>
+                    <th>Horário Final</th>
+                    <th>Km Final</th>                    
+                    <th>Distância Percorrida</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+    </main>
+
+    <script>
+document.getElementById("btnMenu")
+    .addEventListener("click", () => {
+        window.location.href = "index.html";
+    });
+</script>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
