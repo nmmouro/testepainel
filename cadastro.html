@@ -2,79 +2,168 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Nome</title>
 
-    <link rel="stylesheet" href="css/cadastro.css">
-</head>
+  <meta charset="UTF-8">
 
-<body>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <button id="btnMenu" class="btn-menu">
-        ← Menu Principal
+  <title>Cadastro de Ocorrência</title>
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/cadastro.css">
+
+    <button
+      id="btnMenu"
+      type="button">
+
+      ← Menu Principal
+
     </button>
 
-    <div class="card">
+    <button
+      type="button"
+      onclick="location.href='dashboard.html'">
 
-        <h1>Cadastro</h1>
+      Dashboard
 
-        <form id="formulario">
+    </button>
 
-            <label>Nome</label>
-            <select id="nome" required>
-                <option value="">Carregando...</option>
-            </select>
+  </header>
 
-            <label>Veículo</label>
-            <select id="veiculo" required>
-                <option value="">Carregando...</option>
-            </select>
+  <div class="card">
 
-            <label>Passageiro / Setor / Motivo</label>
-            <input type="text" id="motivo">
+    <h1>Cadastro de Ocorrência</h1>
 
-            <label>Itinerário</label>
-            <input type="text" id="itinerario">
+    <form id="formulario">
 
-            <label for="horarioInicial">Horário Inicial</label>
-            <input type="time" id="horarioInicial">
+      <input
+        type="hidden"
+        id="id">
 
-            <label for="kmInicial">Km Inicial</label>
-            <input type="number" id="kmInicial">
+      <label for="nome">
+        Nome
+      </label>
 
-            <label for="horarioFinal">Horário Final</label>
-            <input type="time" id="horarioFinal">            
-            
-            <label for="kmFinal">Km Final</label>
-            <input type="number" id="kmFinal">            
+      <select
+        id="nome"
+        required>
 
-            <label for="distanciaPercorrida">Distância Percorrida</label>
-            <input type="number" id="distanciaPercorrida"readonly>
+        <option value="">
+          Carregando...
+        </option>
 
-            <label>Status</label>
-            <input type="text" id="status" readonly>
+      </select>
 
-            <button type="submit">
-                Salvar
-            </button>
-                    
-        </form>
+      <label for="veiculo">
+        Veículo
+      </label>
 
-        <div id="mensagem"></div>
+      <select
+        id="veiculo"
+        required>
 
-    </div>
+        <option value="">
+          Carregando...
+        </option>
 
-    
-<script>
-document.getElementById("btnMenu")
-    .addEventListener("click", () => {
-        window.location.href = "index.html";
-    });
-</script>
+      </select>
 
+      <label for="motivo">
+        Passageiro / Setor / Motivo
+      </label>
 
-    <script src="js/cadastro.js"></script>
+      <input
+        type="text"
+        id="motivo">
+
+      <label for="itinerario">
+        Itinerário
+      </label>
+
+      <input
+        type="text"
+        id="itinerario">
+
+      <label for="horarioInicial">
+        Horário Inicial
+      </label>
+
+      <input
+        type="time"
+        id="horarioInicial">
+
+      <label for="kmInicial">
+        Km Inicial
+      </label>
+
+      <input
+        type="number"
+        id="kmInicial">
+
+      <label for="horarioFinal">
+        Horário Final
+      </label>
+
+      <input
+        type="time"
+        id="horarioFinal">
+
+      <label for="kmFinal">
+        Km Final
+      </label>
+
+      <input
+        type="number"
+        id="kmFinal">
+
+      <label for="distanciaPercorrida">
+        Distância Percorrida
+      </label>
+
+      <input
+        type="number"
+        id="distanciaPercorrida"
+        readonly>
+
+      <label for="status">
+        Status
+      </label>
+
+      <input
+        type="text"
+        id="status"
+        readonly>
+
+      <button
+        type="submit">
+
+        Salvar
+
+      </button>
+
+    </form>
+
+    <div id="mensagem"></div>
+
+  </div>
+
+  <script>
+
+    document
+      .getElementById("btnMenu")
+      .addEventListener("click", () => {
+
+        window.location.href =
+          "index.html";
+
+      });
+
+  </script>
+
+  <script src="js/pages/cadastro.js"></script>
 
 </body>
 
