@@ -1,18 +1,20 @@
-import { get }
+import {
+  salvarLancamento
+}
 from "../services/api.js";
 
-async function salvar() {
+const resultado =
+  await salvarLancamento({
 
-  const resultado =
-    await get(
-      "salvarLancamento",
-      {
-        nome:
-          nome.value,
+    nome,
+    veiculo,
+    motivo,
+    itinerario,
 
-        veiculo:
-          veiculo.value
-      }
-    );
+    horarioInicial,
+    kmInicial,
 
-}
+    horarioFinal,
+    kmFinal
+
+  });

@@ -1,29 +1,66 @@
 import { CONFIG } from "../config.js";
 
-export async function get(acao, params = {}) {
+async function request(
+  acao,
+  params = {}
+) {
 
-  const url = new URL(CONFIG.API_URL);
+  try {
 
-  url.searchParams.append("acao", acao);
+    const url =
+      new URL(CONFIG.API_URL);
 
-  Object.entries(params).forEach(([key, value]) => {
-    url.searchParams.append(key, value);
-  });
+    url.searchParams.append(
+      "acao",
+      acao
+    );
 
-  const resposta = await fetch(url);
+    Object.entries(params)
+      .forEach(([key, value]) => {
 
-  return resposta.json();
-}
+        if (
+          value !== undefined &&
+          value !== null
+        ) {
 
-export async function post(params = {}) {
+          url.searchParams.append(
+            key,
+            value
+          );
 
-  const url = new URL(CONFIG.API_URL);
+        }
 
-  Object.entries(params).forEach(([key, value]) => {
-    url.searchParams.append(key, value);
-  });
+      });
 
-  const resposta = await fetch(url);
+    const resposta =
+      await fetch(url);
 
-  return resposta.json();
+    if (!resposta.ok) {
+
+      throw new Error(
+        `Erro HTTP ${resposta.status}`
+      );
+
+    }
+
+    return await resposta.json();
+
+  }
+  catch (erro) {
+
+    console.error(erro);
+
+    return {
+
+      sucesso: false,
+
+      erro:
+        erro.message ||
+
+        "Erro ao comunicar com a API."
+
+    };
+
+  }
+
 }

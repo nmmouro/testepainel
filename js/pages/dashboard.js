@@ -6,10 +6,13 @@ const cards =
 
 async function carregar() {
 
-  const resultado =
-    await get(
-      "listarLancamentos"
-    );
+  import {
+  listarLancamentos
+}
+from "../services/api.js";
+
+const resultado =
+  await listarLancamentos();
 
   if (!resultado.sucesso) {
 
