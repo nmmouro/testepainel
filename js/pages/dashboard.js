@@ -1,10 +1,19 @@
 import { get }
 from "../services/api.js";
 
+
+console.log("Dashboard iniciado");
+
 const cards =
   document.querySelector("#cards");
 
 async function carregar() {
+
+
+  const resultado =
+  await listarLancamentos();
+
+console.log(resultado);
 
   import {
   listarLancamentos
