@@ -35,17 +35,10 @@ async function request(
     const resposta =
       await fetch(url);
 
-    if (!resposta.ok) {
-
-      throw new Error(
-        `Erro HTTP ${resposta.status}`
-      );
-
-    }
-
     return await resposta.json();
 
-  } catch (erro) {
+  }
+  catch (erro) {
 
     console.error(erro);
 
@@ -53,9 +46,7 @@ async function request(
 
       sucesso: false,
 
-      erro:
-        erro.message ||
-        "Erro ao comunicar com a API."
+      erro: erro.message
 
     };
 
@@ -63,7 +54,7 @@ async function request(
 
 }
 
-export async function get(
+export function get(
   acao,
   params = {}
 ) {
@@ -71,6 +62,49 @@ export async function get(
   return request(
     acao,
     params
+  );
+
+}
+
+export function listarLancamentos() {
+
+  return request(
+    "listarLancamentos"
+  );
+
+}
+
+export function listarTodosLancamentos() {
+
+  return request(
+    "listarTodosLancamentos"
+  );
+
+}
+
+export function obterLancamento(id) {
+
+  return request(
+    "obterLancamento",
+    { id }
+  );
+
+}
+
+export function excluirLancamento(id) {
+
+  return request(
+    "excluirLancamento",
+    { id }
+  );
+
+}
+
+export function restaurarLancamento(id) {
+
+  return request(
+    "restaurarLancamento",
+    { id }
   );
 
 }
