@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Histórico de Lançamentos</title>
+
+ <link rel="stylesheet"
+      href="/css/style.css/historico.css">
+
+  <header class="header">
+
+    <h1>Histórico de Lançamentos</h1>
+
+    <div class="acoes-header">
+
+      <button
+        type="button"
+        onclick="location.href='dashboard.html'">
+
+        Dashboard
+
+      </button>
+
+      <button
+        type="button"
+        onclick="location.href='cadastro.html'">
+
+        Novo Lançamento
+
+      </button>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>Data</th>
+          <th>Motorista</th>
+          <th>Veículo</th>
+          <th>Motivo</th>
+          <th>KM Inicial</th>
+          <th>KM Final</th>
+          <th>Distância</th>
+          <th>Status</th>
+          <th>Situação</th>
+          <th>Ações</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody id="tabela">
+
+        <tr>
+
+          <td colspan="10">
+
+            Carregando...
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </main>
+
+  <script
+  type="module"
+  src="./js/pages/historico.js">
+</script>
+
+</body>
+
+</html>
