@@ -1,43 +1,14 @@
-body {
-
-  margin: 0;
-  padding: 20px;
-
-  font-family: Arial, sans-serif;
-
-  background: #f4f6f9;
-
-}
-
-header {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 20px;
-
-}
-
-button {
-
-  border: 0;
-
-  padding: 10px 15px;
-
-  border-radius: 6px;
-
-  cursor: pointer;
-
-}
-
-#cards {
+.cards {
 
   display: grid;
 
-  gap: 15px;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    );
+
+  gap: 20px;
 
 }
 
@@ -47,15 +18,23 @@ button {
 
   border-radius: 10px;
 
-  padding: 15px;
+  padding: 20px;
 
-  border-left: 5px solid #2196f3;
+  border-left: 5px solid #1d3557;
 
 }
 
 .card h3 {
 
-  margin-top: 0;
+  color: #1d3557;
+
+  margin-bottom: 10px;
+
+}
+
+.card p {
+
+  margin: 8px 0;
 
 }
 
@@ -65,28 +44,38 @@ button {
 
   gap: 10px;
 
-  margin-top: 10px;
+  margin-top: 15px;
 
 }
 
 .btn-editar {
 
-  background: #2196f3;
+  background: #198754;
+
   color: white;
+
+  padding: 8px 12px;
 
 }
 
 .btn-excluir {
 
-  background: #f44336;
+  background: #dc3545;
+
   color: white;
+
+  padding: 8px 12px;
 
 }
 
-.loading {
+.btn-editar:hover {
 
-  text-align: center;
+  background: #157347;
 
-  padding: 40px;
+}
+
+.btn-excluir:hover {
+
+  background: #bb2d3b;
 
 }
