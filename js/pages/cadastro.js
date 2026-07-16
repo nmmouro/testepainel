@@ -1,5 +1,19 @@
 import { get } from "../services/api.js";
 
+
+const selectNome =
+  document.getElementById(
+    "nome"
+  );
+
+async function carregarEmpregados() {
+
+  const resultado =
+    await get(
+      "listarEmpregados"
+    );
+
+
 const selectVeiculo =
   document.getElementById("veiculo");
 
