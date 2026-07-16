@@ -1,20 +1,15 @@
-import {
-  salvarLancamento
+import { get } from "../services/api.js";
+
+const selectVeiculo =
+  document.getElementById("veiculo");
+
+async function carregarVeiculos() {
+
+  const resultado =
+    await get("listarVeiculos");
+
+  console.log(resultado);
+
 }
-from "../services/api.js";
 
-const resultado =
-  await salvarLancamento({
-
-    nome,
-    veiculo,
-    motivo,
-    itinerario,
-
-    horarioInicial,
-    kmInicial,
-
-    horarioFinal,
-    kmFinal
-
-  });
+carregarVeiculos();
