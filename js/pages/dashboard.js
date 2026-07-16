@@ -1,30 +1,45 @@
-import {
-  listarLancamentos,
-  excluirLancamento
-}
+import { get }
 from "../services/api.js";
 
-const cards =
-  document.querySelector("#cards");
+const selectVeiculo =
+  document.getElementById(
+    "veiculo"
+  );
 
-async function carregar() {
+async function carregarVeiculos() {
 
   const resultado =
-    await listarLancamentos();
+    await get(
+      "listarVeiculos"
+    );
 
-  console.log(resultado);
-
-  if (!resultado.sucesso) {
-
-    cards.innerHTML =
-      `<p>${resultado.erro}</p>`;
+  if (
+    !resultado.sucesso
+  ) {
 
     return;
 
   }
 
-  renderizar(
-    resultado.dados
+  selectVeiculo.innerHTML =
+    `<option value="">
+      Selecione
+    </option>`;
+
+  resultado.dados.forEach(
+    veiculo => {
+
+      selectVeiculo.innerHTML += `
+
+        <option value="${veiculo}">
+          ${veiculo}
+        </option>
+
+      `;
+
+    }
   );
 
 }
+
+carregarVeiculos();
