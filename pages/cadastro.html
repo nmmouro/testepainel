@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Cadastro de Ocorrência</title>
+
+ /css/style.css
+
+/css/cadastro.css
+
+
+    <button
+      id="btnMenu"
+      type="button">
+      ← Menu Principal
+
+    </button>
+
+    <button
+      type="button"
+      onclick="location.href='dashboard.html'">
+
+      Dashboard
+
+    </button>
+
+  </header>
+
+  <div class="card">
+
+    <h1>Cadastro de Ocorrência</h1>
+
+    <form id="formulario">
+
+      <input
+        type="hidden"
+        id="id">
+
+      <label for="nome">
+        Nome
+      </label>
+
+      <select
+        id="nome"
+        required>
+
+        <option value="">
+          Carregando...
+        </option>
+
+      </select>
+
+      <label for="veiculo">
+        Veículo
+      </label>
+
+      <select
+        id="veiculo"
+        required>
+
+        <option value="">
+          Carregando...
+        </option>
+
+      </select>
+
+      <label for="motivo">
+        Passageiro / Setor / Motivo
+      </label>
+
+      <input
+        type="text"
+        id="motivo">
+
+      <label for="itinerario">
+        Itinerário
+      </label>
+
+      <input
+        type="text"
+        id="itinerario">
+
+      <label for="horarioInicial">
+        Horário Inicial
+      </label>
+
+      <input
+        type="time"
+        id="horarioInicial">
+
+      <label for="kmInicial">
+        Km Inicial
+      </label>
+
+      <input
+        type="number"
+        id="kmInicial">
+
+      <label for="horarioFinal">
+        Horário Final
+      </label>
+
+      <input
+        type="time"
+        id="horarioFinal">
+
+      <label for="kmFinal">
+        Km Final
+      </label>
+
+      <input
+        type="number"
+        id="kmFinal">
+
+      <label for="distanciaPercorrida">
+        Distância Percorrida
+      </label>
+
+      <input
+        type="number"
+        id="distanciaPercorrida"
+        readonly>
+
+      <label for="status">
+        Status
+      </label>
+
+      <input
+        type="text"
+        id="status"
+        readonly>
+
+      <button
+        type="submit">
+
+        Salvar
+
+      </button>
+
+    </form>
+
+    <div id="mensagem"></div>
+
+  </div>
+
+  <script>
+
+    document
+      .getElementById("btnMenu")
+      .addEventListener("click", () => {
+
+        window.location.href =
+          "index.html";
+
+      });
+
+  </script>
+
+  <script src="./js/pages/cadastro.js"></script>
+
+</body>
+
+</html>
 
