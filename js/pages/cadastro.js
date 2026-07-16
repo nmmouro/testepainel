@@ -1,44 +1,97 @@
-import { get } from "../services/api.js";
-
+import { get }
+from "../services/api.js";
 
 const selectNome =
-  document.getElementById(
-    "nome"
-  );
+  document.getElementById("nome");
+
+const selectVeiculo =
+  document.getElementById("veiculo");
 
 async function carregarEmpregados() {
 
   const resultado =
-    await get(
-      "listarEmpregados"
-    );
+    await get("listarEmpregados");
 
+  if (!resultado.sucesso)
+    return;
 
-const selectVeiculo =
-  document.getElementById("veiculo");
+  selectNome.innerHTML = `
+    <option value="">
+      Selecione o empregado
+    </option>
+  `;
+
+  resultado.dados.forEach(
+    empregado => {
+
+      selectNome.innerHTML += `
+        <option value="${empregado.nome}">
+          ${empregado.nome}
+        </option>
+      `;
+
+    }
+  );
+
+}
 
 async function carregarVeiculos() {
 
   const resultado =
     await get("listarVeiculos");
 
-  console.log(resultado);
+  if (!resultado.sucesso)
+    return;
+
+  selectVeiculo.innerHTML = `
+    <option value="">
+      Selecione o veículo
+    </option>
+  `;
+
+  resultado.dados.forEach(
+    veiculo => {
+
+      selectVeiculo.innerHTML += `
+        <option value="${veiculo}">
+          ${veiculo}
+        </option>
+      `;
+
+    }
+  );
 
 }
 
-carregarVeiculos();
+async function inicializar() {
 
+  try {
 
-  ///carrega empregdos e veículos juntos
+    await Promise.all([
 
-/*
-  async function inicializar() {
+      carregarEmpregados(),
 
-  await carregarEmpregados();
+      carregarVeiculos()
 
-  await carregarVeiculos();
+    ]);
+
+    console.log(
+      "Empregados e veículos carregados."
+    );
+
+  }
+  catch (erro) {
+
+    console.error(
+      "Erro ao carregar dados:",
+      erro
+    );
+
+  }
 
 }
 
-inicializar();
-  */
+document.addEventListener(
+  "DOMContentLoaded",
+  inicializar
+);
