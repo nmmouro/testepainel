@@ -27,3 +27,18 @@ async function carregarVeiculos() {
 }
 
 carregarVeiculos();
+
+
+  ///carrega empregdos e veículos juntos
+
+/*
+  async function inicializar() {
+
+  await carregarEmpregados();
+
+  await carregarVeiculos();
+
+}
+
+inicializar();
+  */
