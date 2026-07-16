@@ -1,4 +1,5 @@
-import { CONFIG } from "../config.js";
+import { CONFIG }
+from "../config.js";
 
 async function request(
   acao,
@@ -16,36 +17,35 @@ async function request(
     );
 
     Object.entries(params)
-      .forEach(([key, value]) => {
+      .forEach(([k, v]) => {
 
         if (
-          value !== undefined &&
-          value !== null
+          v !== undefined &&
+          v !== null
         ) {
-
           url.searchParams.append(
-            key,
-            value
+            k,
+            v
           );
-
         }
 
       });
 
-    const resposta =
+    const response =
       await fetch(url);
 
-    if (!resposta.ok) {
+    if (!response.ok) {
 
       throw new Error(
-        `Erro HTTP ${resposta.status}`
+        `HTTP ${response.status}`
       );
 
     }
 
-    return await resposta.json();
+    return await response.json();
 
-  } catch (erro) {
+  }
+  catch (erro) {
 
     console.error(erro);
 
@@ -53,9 +53,7 @@ async function request(
 
       sucesso: false,
 
-      erro:
-        erro.message ||
-        "Erro ao comunicar com a API."
+      erro: erro.message
 
     };
 
@@ -63,7 +61,7 @@ async function request(
 
 }
 
-export async function get(
+export function get(
   acao,
   params = {}
 ) {
@@ -71,6 +69,75 @@ export async function get(
   return request(
     acao,
     params
+  );
+
+}
+
+export function listarLancamentos() {
+
+  return request(
+    "listarLancamentos"
+  );
+
+}
+
+export function listarTodosLancamentos() {
+
+  return request(
+    "listarTodosLancamentos"
+  );
+
+}
+
+export function obterLancamento(id) {
+
+  return request(
+    "obterLancamento",
+    { id }
+  );
+
+}
+
+export function salvarLancamento(
+  dados
+) {
+
+  return request(
+    "salvarLancamento",
+    dados
+  );
+
+}
+
+export function atualizarLancamento(
+  dados
+) {
+
+  return request(
+    "atualizarLancamento",
+    dados
+  );
+
+}
+
+export function excluirLancamento(
+  id
+) {
+
+  return request(
+    "excluirLancamento",
+    { id }
+  );
+
+}
+
+export function restaurarLancamento(
+  id
+) {
+
+  return request(
+    "restaurarLancamento",
+    { id }
   );
 
 }
