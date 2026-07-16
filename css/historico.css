@@ -1,23 +1,12 @@
-body {
+.tabela-container {
 
-  margin: 0;
-  padding: 20px;
+  overflow-x: auto;
 
-  font-family: Arial, sans-serif;
+  background: white;
 
-  background: #f4f6f9;
+  border-radius: 10px;
 
-}
-
-header {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 20px;
+  padding: 15px;
 
 }
 
@@ -27,57 +16,77 @@ table {
 
   border-collapse: collapse;
 
-  background: white;
+}
+
+thead {
+
+  background: #1d3557;
+
+  color: white;
 
 }
 
 th,
 td {
 
-  padding: 10px;
+  padding: 12px;
+
+  text-align: center;
 
   border-bottom: 1px solid #ddd;
 
-  text-align: left;
-
 }
 
-th {
+tbody tr:hover {
 
-  background: #1976d2;
-  color: white;
-
-}
-
-button {
-
-  padding: 8px 12px;
-
-  border: none;
-
-  border-radius: 6px;
-
-  cursor: pointer;
-
-}
-
-.btn-editar {
-
-  background: #2196f3;
-  color: white;
+  background: #f8f9fa;
 
 }
 
 .btn-restaurar {
 
-  background: #4caf50;
+  background: #0d6efd;
+
   color: white;
+
+  padding: 8px 12px;
 
 }
 
-.btn-excluir {
+.btn-restaurar:hover {
 
-  background: #f44336;
-  color: white;
+  background: #0b5ed7;
+
+}
+
+.status-andamento {
+
+  color: #fd7e14;
+
+  font-weight: bold;
+
+}
+
+.status-concluido {
+
+  color: #198754;
+
+  font-weight: bold;
+
+}
+
+.situacao-excluido {
+
+  color: #dc3545;
+
+  font-weight: bold;
+
+}
+
+.situacao-ativo {
+
+  color: #198754;
+
+  font-weight: bold;
 
 }
