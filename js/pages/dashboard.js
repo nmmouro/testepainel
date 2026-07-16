@@ -1,4 +1,5 @@
-import { get }
+import { listarLancamentos,
+  excluirLancamento }
 from "../services/api.js";
 
 
