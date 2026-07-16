@@ -1,10 +1,6 @@
 import {
 
-  listarTodosLancamentos,
-
-  excluirLancamento,
-
-  restaurarLancamento
+  listarTodosLancamentos
 
 }
 from "../services/api.js";
