@@ -45,8 +45,7 @@ async function request(
 
     return await resposta.json();
 
-  }
-  catch (erro) {
+  } catch (erro) {
 
     console.error(erro);
 
@@ -56,11 +55,22 @@ async function request(
 
       erro:
         erro.message ||
-
         "Erro ao comunicar com a API."
 
     };
 
   }
+
+}
+
+export async function get(
+  acao,
+  params = {}
+) {
+
+  return request(
+    acao,
+    params
+  );
 
 }
